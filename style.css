@@ -1,4 +1,4 @@
-/* Reset básico (sin cambios) */
+/* Reset básico */
 * {
     margin: 0;
     padding: 0;
@@ -13,7 +13,33 @@ body {
     overflow-x: hidden;
 }
 
-/* ... (Definiciones de Animaciones y Tipografías - sin cambios por ahora) ... */
+/* Definiciones de Animaciones */
+@keyframes bounceProfessional {
+    0% {
+        transform: translateY(0);
+        animation-timing-function: ease-out; /* Comienza rápido y desacelera */
+    }
+    50% {
+        transform: translateY(-30px); /* Un poco más de altura */
+        animation-timing-function: ease-in-out; /* Acelera y desacelera */
+    }
+    100% {
+        transform: translateY(0);
+        animation-timing-function: ease-in; /* Comienza lento y acelera */
+    }
+}
+
+/* Tipografías */
+h1, h2, h3 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 700;
+    color: #6a1b9a; /* violeta pastel */
+}
+
+p, a, button, input, textarea {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
 
 /* Encabezado */
 .header {
@@ -56,39 +82,27 @@ body {
     width: 100%;
 }
 
-/* Media Query para pantallas de hasta 768px (tablets y móviles grandes) */
 @media (max-width: 768px) {
     .header {
-        padding: 15px 20px; /* Reducir el padding del encabezado */
-        flex-direction: column; /* Apilar logo y navegación */
-        align-items: center; /* Centrar los elementos */
+        padding: 15px 20px;
+        flex-direction: column;
+        align-items: center;
     }
 
     .logo img {
-        height: 80px; /* Reducir el tamaño del logo */
+        height: 80px;
         margin-bottom: 10px;
     }
 
     .nav ul {
-        flex-direction: column; /* Apilar los enlaces de navegación */
-        align-items: center; /* Centrar los enlaces */
+        flex-direction: column;
+        align-items: center;
         gap: 15px;
         margin-top: 10px;
     }
 
     .nav a {
-        font-size: 16px; /* Reducir el tamaño de la fuente de los enlaces */
-    }
-}
-
-/* Media Query para pantallas de hasta 480px (móviles pequeños) */
-@media (max-width: 480px) {
-    .logo img {
-        height: 60px; /* Reducir aún más el logo */
-    }
-
-    .nav a {
-        font-size: 14px; /* Reducir aún más la fuente de los enlaces */
+        font-size: 16px;
     }
 }
 
@@ -119,29 +133,28 @@ body {
     margin-bottom: 30px;
 }
 
-/* Media Query para el Hero en pantallas de hasta 768px */
 @media (max-width: 768px) {
     .hero {
-        height: auto; /* Ajustar la altura al contenido */
-        padding: 80px 20px; /* Añadir padding vertical */
+        height: auto;
+        padding: 80px 20px;
     }
 
     .overlay {
-        padding: 40px 20px; /* Reducir el padding del overlay */
+        padding: 40px 20px;
     }
 
     .titulo {
-        font-size: 2.5rem; /* Reducir el tamaño del título */
+        font-size: 2.5rem;
         margin-bottom: 15px;
     }
 
     .hero p {
-        font-size: 1.2rem; /* Reducir el tamaño del párrafo */
+        font-size: 1.2rem;
         margin-bottom: 20px;
     }
 }
 
-/* Botón principal (sin cambios significativos por ahora) */
+/* Botón principal */
 .btn-primario {
     background: linear-gradient(90deg, #ff80ab, #ce93d8);
     color: white;
@@ -209,7 +222,7 @@ body {
 .servicio img {
     width: 200px;
     margin-bottom: 5px;
-    max-width: 100%; /* Hacer la imagen responsive */
+    max-width: 100%;
     height: auto;
 }
 
@@ -219,7 +232,7 @@ body {
 
 @media (max-width: 768px) {
     .grid-servicios {
-        grid-template-columns: repeat(auto-fit, minmax(100%, 1fr)); /* Una columna en pantallas pequeñas */
+        grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
         gap: 20px;
     }
 
@@ -263,19 +276,19 @@ body {
 
 @media (max-width: 480px) {
     .botones-contacto {
-        flex-direction: column; /* Apilar los botones */
+        flex-direction: column;
         align-items: center;
         gap: 10px;
     }
 
     .btn-whatsapp, .btn-email {
-        width: 100%; /* Ocupar todo el ancho */
+        width: 100%;
         font-size: 16px;
         padding: 12px 20px;
     }
 }
 
-/* Formulario (sin cambios significativos por ahora) */
+/* Formulario */
 .formulario {
     margin-top: 40px;
     display: flex;
@@ -291,7 +304,7 @@ body {
     font-size: 16px;
 }
 
-/* Footer (sin cambios significativos por ahora) */
+/* Footer */
 .footer {
     background: #1a1a1a;
     color: #f3e5ab;
@@ -299,7 +312,7 @@ body {
     padding: 30px 20px;
 }
 
-/* Bot Asistente (sin cambios significativos por ahora) */
+/* Bot Asistente */
 #bot-asistente {
     position:fixed;
     bottom: 40px;
@@ -315,7 +328,7 @@ body {
 
 @media (max-width: 480px) {
     .bot-gif {
-        width: 80px; /* Reducir el tamaño del bot en móviles */
+        width: 80px;
     }
 
     #bot-asistente {
@@ -347,12 +360,12 @@ body {
 
 @media (max-width: 768px) {
     .galeria {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Ajustar el tamaño mínimo de las columnas */
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
         gap: 10px;
     }
 }
 
-/* Encuesta (sin cambios significativos por ahora) */
+/* Encuesta */
 .boton-juego {
     background: linear-gradient(145deg, #ff7e5f, #feb47b);
     border: none;
@@ -384,7 +397,15 @@ body {
     height: 32px;
 }
 
-/* Modal (sin cambios significativos por ahora) */
+@media (max-width: 600px) {
+    .boton-juego {
+        font-size: 18px;
+        padding: 12px 20px;
+        cursor: pointer;
+    }
+}
+
+/* Modal */
 .modal {
     display: none;
     position: fixed;
@@ -415,7 +436,73 @@ body {
     to { transform: translateY(0); opacity: 1; }
 }
 
-/* ... (Resto del CSS - sin cambios significativos por ahora) ... */
+@media (max-width: 600px) {
+    .modal-contenido {
+        width: 95%;
+        padding: 20px;
+    }
+}
+
+/* Estilo preguntas (sin cambios por ahora) */
+.pregunta {
+    margin-bottom: 20px;
+}
+
+textarea, select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-top: 5px;
+    font-size: 16px;
+    resize: vertical;
+}
+
+.opciones-radio {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.opciones-radio .opcion-radio {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.btn-aplicar {
+    background-color: #ff7e5f;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 30px;
+    font-size: 18px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+.btn-aplicar:hover {
+    background-color: #feb47b;
+    cursor: pointer;
+}
+
+.mensaje {
+    text-align: center;
+    margin-top: 15px;
+    color: green;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.oculto {
+    display: none;
+}
 
 #talla {
     font-size: large;
