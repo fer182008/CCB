@@ -166,7 +166,6 @@ p, a, button, input, textarea {
 }
 
 /* Servicios */
-/* Servicios */
 #servicios {
     background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url('../img/fondo-servicios.jpg') no-repeat center center/cover;
 }
@@ -228,27 +227,31 @@ p, a, button, input, textarea {
 
     .servicio {
         flex-shrink: 0;
-        /* ANTES: min-width: 280px; */
         width: auto; /* Ajustar el ancho automáticamente al contenido */
         padding: 20px;
         display: flex; /* Usar flex para la disposición horizontal en móviles */
         flex-direction: column; /* Alinear contenido verticalmente dentro del servicio */
-        align-items: flex-start; /* Alinear elementos al inicio para mejor adaptación */
+        align-items: flex-start; /* Alinear elementos al inicio */
         text-align: left; /* Alinear el texto a la izquierda */
+        max-width: 250px; /* Establecer un ancho máximo para el contenedor del servicio */
     }
 
     .servicio img {
         width: 100px; /* Reducir aún más la imagen en horizontal */
-        margin-bottom: 5px;
+        margin-bottom: 10px;
     }
 
     .servicio h3 {
         font-size: 1.2rem;
         margin-top: 5px;
+        max-width: 100%; /* Asegurar que el título también se ajuste */
+        word-wrap: break-word; /* Romper palabras largas si es necesario */
     }
 
     .servicio p {
         font-size: 0.9rem;
+        max-width: 100%; /* Limitar el ancho del párrafo */
+        word-wrap: break-word; /* Romper palabras largas si es necesario */
     }
 }
 
