@@ -166,53 +166,89 @@ p, a, button, input, textarea {
 }
 
 /* Servicios */
-/* Estilos base de servicios (para PC) */
+/* Servicios */
+#servicios {
+    background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url('../img/fondo-servicios.jpg') no-repeat center center/cover;
+}
+
 .grid-servicios {
-    background-color: #f7b3d6;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 40px;
+    padding: 20px; /* Añadido padding al contenedor */
 }
 
 .servicio {
     background: #ffc4ff;
-    padding: 50px;
+    padding: 30px; /* Reducido el padding */
     border-radius: 20px;
     box-shadow: 0 8px 16px rgba(0,0,0,0.1);
     transition: transform 0.3s;
     cursor: pointer;
+    display: flex; /* Mantenemos flex para la alineación vertical en PC */
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 .servicio img {
-    width: 200px;
-    margin-bottom: 5px;
+    width: 150px; /* Reducido el tamaño de la imagen */
+    margin-bottom: 10px;
     max-width: 100%;
     height: auto;
 }
 
-.servicio:hover {
-    transform: translateY(-10px);
+.servicio h3 {
+    margin-top: 10px;
+    font-size: 1.5rem;
 }
 
-/* Media Query para pantallas de hasta 768px (móviles) */
+.servicio p {
+    font-size: 1rem;
+}
+
+.servicio:hover {
+    transform: translateY(-5px);
+}
+
 @media (max-width: 768px) {
     .grid-servicios {
-        display: flex; /* Convertir a flex para el desplazamiento horizontal */
+        display: flex;
         flex-direction: row;
         gap: 20px;
-        overflow-x: scroll; /* Permitir el desplazamiento horizontal */
-        padding-bottom: 15px; /* Espacio para la barra de desplazamiento si es visible */
-        grid-template-columns: none; /* Anular el grid para el flex */
+        overflow-x: scroll;
+        padding: 15px;
+        scrollbar-width: none; /* Ocultar barra de scroll en Firefox */
+        -ms-overflow-style: none; /* Ocultar barra de scroll en IE y Edge */
+    }
+
+    .grid-servicios::-webkit-scrollbar {
+        display: none; /* Ocultar barra de scroll en Chrome, Safari y Opera */
     }
 
     .servicio {
-        flex-shrink: 0; /* Evitar que los servicios se encojan */
-        min-width: 250px; /* Mantener el ancho mínimo de cada servicio */
-        padding: 30px;
+        flex-shrink: 0;
+        /* ANTES: min-width: 280px; */
+        width: auto; /* Ajustar el ancho automáticamente al contenido */
+        padding: 20px;
+        display: flex; /* Usar flex para la disposición horizontal en móviles */
+        flex-direction: column; /* Alinear contenido verticalmente dentro del servicio */
+        align-items: flex-start; /* Alinear elementos al inicio para mejor adaptación */
+        text-align: left; /* Alinear el texto a la izquierda */
     }
 
     .servicio img {
-        width: 150px;
+        width: 100px; /* Reducir aún más la imagen en horizontal */
+        margin-bottom: 5px;
+    }
+
+    .servicio h3 {
+        font-size: 1.2rem;
+        margin-top: 5px;
+    }
+
+    .servicio p {
+        font-size: 0.9rem;
     }
 }
 
