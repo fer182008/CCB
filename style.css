@@ -42,44 +42,70 @@ p, a, button, input, textarea {
 }
 
 /* Encabezado */
+/* Estilos base del encabezado (para PC) */
 .header {
-  background: #1a1a1a; /* negro pastel */
-  padding: 20px 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    background: #1a1a1a; /* negro pastel */
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .logo img {
-  height: 100px;
+    height: 100px;
 }
 
 .nav ul {
-  list-style: none;
-  display: flex;
-  gap: 25px;
+    list-style: none;
+    display: flex;
+    gap: 25px;
 }
 
 .nav a {
-  color: #f3e5ab; /* dorado pastel */
-  text-decoration: none;
-  font-size: 18px;
-  position: relative;
+    color: #f3e5ab; /* dorado pastel */
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
 }
 
 .nav a::after {
-  content: "";
-  position: absolute;
-  width: 0%;
-  height: 2px;
-  background: #f3e5ab;
-  left: 0;
-  bottom: -5px;
-  transition: 0.4s;
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: #f3e5ab;
+    left: 0;
+    bottom: -5px;
+    transition: 0.4s;
 }
 
 .nav a:hover::after {
-  width: 100%;
+    width: 100%;
+}
+
+/* Media Query para pantallas de hasta 768px (móviles) */
+@media (max-width: 768px) {
+    .header {
+        padding: 15px 20px;
+        flex-direction: column; /* Apilar elementos verticalmente */
+        align-items: center; /* Centrar elementos */
+    }
+
+    .logo img {
+        height: 60px; /* Achicar el logo */
+        margin-bottom: 10px; /* Espacio inferior si la navegación se apila debajo */
+    }
+
+    .nav ul {
+        flex-direction: column; /* Apilar los enlaces */
+        align-items: center;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .nav a {
+        font-size: 14px; /* Achicar la fuente de los enlaces */
+    }
 }
 
 /* Hero */
@@ -140,29 +166,54 @@ p, a, button, input, textarea {
 }
 
 /* Servicios */
+/* Estilos base de servicios (para PC) */
 .grid-servicios {
-  background-color: #f7b3d6;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 40px;
+    background-color: #f7b3d6;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
 }
 
 .servicio {
-  background: #ffc4ff;
-  padding: 50px;
-  border-radius: 20px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-  transition: transform 0.3s;
-  cursor: pointer;
+    background: #ffc4ff;
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+    cursor: pointer;
 }
 
 .servicio img {
-  width: 200px;
-  margin-bottom: 5px;
+    width: 200px;
+    margin-bottom: 5px;
+    max-width: 100%;
+    height: auto;
 }
 
 .servicio:hover {
-  transform: translateY(-10px);
+    transform: translateY(-10px);
+}
+
+/* Media Query para pantallas de hasta 768px (móviles) */
+@media (max-width: 768px) {
+    .grid-servicios {
+        display: flex; /* Convertir a flex para el desplazamiento horizontal */
+        flex-direction: row;
+        gap: 20px;
+        overflow-x: scroll; /* Permitir el desplazamiento horizontal */
+        padding-bottom: 15px; /* Espacio para la barra de desplazamiento si es visible */
+        grid-template-columns: none; /* Anular el grid para el flex */
+    }
+
+    .servicio {
+        flex-shrink: 0; /* Evitar que los servicios se encojan */
+        min-width: 250px; /* Mantener el ancho mínimo de cada servicio */
+        padding: 30px;
+    }
+
+    .servicio img {
+        width: 150px;
+    }
 }
 
 /* Botones de contacto */
@@ -232,25 +283,46 @@ p, a, button, input, textarea {
   width: 100px;
 }
 
-/* Galería */
+/* Estilos base de la galería (para PC) */
 .galeria {
-  background-color: #ffd0e7;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-  cursor: pointer;
-  border-radius: 15px;
+    background-color: #ffd0e7;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    cursor: pointer;
+    border-radius: 15px;
+    overflow-x: auto; /* Ocultar la barra de scroll en PC si aparece */
+    scrollbar-width: none; /* Ocultar la barra de scroll en navegadores que lo soportan */
+    -ms-overflow-style: none; /* Ocultar la barra de scroll en IE y Edge */
+}
+
+.galeria::-webkit-scrollbar {
+    display: none; /* Ocultar la barra de scroll en Chrome, Safari y Opera */
 }
 
 .galeria img {
-  width: 100%;
-  border-radius: 20px;
-  transition: transform 0.3s;
-  cursor: pointer;
+    width: 100%;
+    border-radius: 20px;
+    transition: transform 0.3s;
+    cursor: pointer;
+    flex-shrink: 0; /* Evitar que las imágenes se encojan */
+    min-width: 200px; /* Asegurar un ancho mínimo para cada imagen */
 }
 
 .galeria img:hover {
-  transform: scale(1.05);
+    transform: scale(1.05);
+}
+
+/* Media Query para pantallas de hasta 768px (móviles) */
+@media (max-width: 768px) {
+    .galeria {
+        display: flex; /* Convertir a flex para el desplazamiento horizontal */
+        flex-direction: row;
+        gap: 10px;
+        overflow-x: scroll; /* Permitir el desplazamiento horizontal */
+        padding-bottom: 15px; /* Espacio para la barra de desplazamiento si es visible */
+        grid-template-columns: none; /* Anular el grid para el flex */
+    }
 }
 /* Encuesta */
 
