@@ -1,0 +1,290 @@
+/* Estilos para el contenedor principal del chat */
+.chat-container {
+    position: fixed;
+    bottom: 80px;
+    right: 30px;
+    width: 380px; /* Aumenté un poco el ancho */
+    max-height: 500px; /* Aumenté un poco la altura máxima */
+    background-color: #fff;
+    border-radius: 12px; /* Bordes más redondeados */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Sombra más sutil y elegante */
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    overflow-y: auto; /* Muestra la barra solo cuando es necesario */
+    border: 1px solid #e0e0e0; /* Borde ligero */
+}
+
+/* Estilos para la cabecera del chat */
+.chat-header {
+    background-color: #f8f9fa; /* Un gris muy claro */
+    padding: 18px; /* Aumenté el padding */
+    border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.chat-header h3 {
+    margin: 0;
+    font-size: 1.3rem; /* Un poco más grande */
+    color: #37474f; /* Un gris azulado oscuro */
+    font-weight: 500; /* Ligeramente más grueso */
+}
+
+.chat-header .bot-avatar {
+    width: 36px; /* Un poco más grande */
+    height: 36px; /* Un poco más grande */
+    border-radius: 50%;
+    margin-right: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Sombra suave al avatar */
+}
+
+.chat-header button#close-chat-button {
+    background: none;
+    border: none;
+    color: #78909c; /* Un gris azulado más claro */
+    font-size: 1.4rem; /* Un poco más grande */
+    cursor: pointer;
+    outline: none;
+    transition: color 0.2s ease-in-out; /* Transición suave al hacer hover */
+}
+
+.chat-header button#close-chat-button:hover {
+    color: #37474f;
+}
+
+/* Estilos para el área de mensajes */
+.chat-messages {
+    flex-grow: 1;
+    padding: 20px; /* Aumenté el padding */
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-messages .message {
+    padding: 12px 16px; /* Aumenté el padding */
+    border-radius: 10px; /* Bordes más redondeados */
+    margin-bottom: 10px; /* Aumenté el margen */
+    clear: both;
+    font-size: 1rem; /* Tamaño de fuente estándar */
+    line-height: 1.4; /* Mejor espaciado entre líneas */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); /* Sombra muy suave a los mensajes */
+}
+
+.chat-messages .message.bot {
+    background-color: #e1f5fe; /* Un azul muy claro */
+    color: #263238; /* Un gris azulado oscuro */
+    align-self: flex-start;
+    border: 1px solid #b3e5fc; /* Borde sutil */
+}
+
+.chat-messages .message.user {
+    background-color: #f0f9e6; /* Un verde muy claro */
+    color: #263238;
+    align-self: flex-end;
+    border: 1px solid #c8e6c9; /* Borde sutil */
+}
+
+/* Estilos para la entrada de mensajes */
+.chat-input {
+    padding: 18px; /* Aumenté el padding */
+    border-top: 1px solid #e0e0e0;
+    display: flex;
+    align-items: center;
+}
+
+.chat-input input#user-message {
+    flex-grow: 1;
+    padding: 12px; /* Aumenté el padding */
+    border: 1px solid #ced4da; /* Un gris más claro para el borde */
+    border-radius: 6px; /* Bordes más redondeados */
+    margin-right: 12px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s ease-in-out;
+}
+
+.chat-input input#user-message:focus {
+    border-color: #007bff; /* Color de foco más llamativo */
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Sombra de foco */
+}
+
+.chat-input button#send-button {
+    background-color: #007bff; /* Azul primario */
+    color: #fff;
+    border: none;
+    padding: 12px 18px; /* Aumenté el padding */
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    outline: none;
+    transition: background-color 0.2s ease-in-out;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.chat-input button#send-button:hover {
+    background-color: #0056b3; /* Azul más oscuro al hacer hover */
+}
+
+.chat-input button#send-button:active {
+    background-color: #004085; /* Azul aún más oscuro al presionar */
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5); /* Sombra al presionar */
+}
+
+/* Estilos para el formulario de pedido */
+#order-form {
+    background-color: #f8f9fa; /* Un gris muy claro */
+    border: 1px solid #e0e0e0;
+    border-radius: 10px; /* Bordes más redondeados */
+    padding: 25px; /* Aumenté el padding */
+    margin-top: 15px;
+}
+
+#order-form h2 {
+    color: #37474f; /* Gris azulado oscuro */
+    text-align: center;
+    margin-bottom: 20px; /* Aumenté el margen inferior */
+    font-size: 1.4rem; /* Un poco más grande */
+    font-weight: 500;
+}
+
+#order-form label {
+    display: block;
+    margin-bottom: 10px; /* Aumenté el margen inferior */
+    color: #546e7a; /* Un gris azulado más claro */
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+#order-form input[type="text"],
+#order-form textarea {
+    width: calc(100% - 20px); /* Ajuste para el padding */
+    padding: 12px; /* Aumenté el padding */
+    margin-bottom: 20px; /* Aumenté el margen inferior */
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    box-sizing: border-box; /* Importante para el ancho */
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s ease-in-out;
+}
+
+#order-form input[type="text"]:focus,
+#order-form textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+#order-form textarea {
+    resize: vertical; /* Permite al usuario ajustar la altura */
+    min-height: 120px; /* Aumenté la altura mínima */
+}
+
+#order-form button[type="submit"] {
+    background-color: #28a745; /* Un verde más profesional */
+    color: white;
+    padding: 12px 20px; /* Aumenté el padding */
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1rem; /* Un poco más grande */
+    transition: background-color 0.2s ease-in-out;
+    width: 100%; /* Ocupar todo el ancho del contenedor */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+#order-form button[type="submit"]:hover {
+    background-color: #1e7e34; /* Verde más oscuro al hacer hover */
+}
+
+#order-form button[type="submit"]:active {
+    background-color: #155724; /* Verde aún más oscuro al presionar */
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5); /* Sombra al presionar */
+}
+
+#order-form #cerrar-pedido {
+    float: right;
+    font-size: 1.8rem; /* Más grande */
+    color: #6c757d; /* Un gris más suave */
+    cursor: pointer;
+    margin-top: -15px; /* Ajustar la posición vertical */
+    margin-right: -10px; /* Ajustar la posición horizontal */
+    transition: color 0.2s ease-in-out;
+}
+
+#order-form #cerrar-pedido:hover {
+    color: #37474f;
+}
+
+#order-form div {
+    margin-bottom: 20px; /* Aumenté el espacio entre los campos */
+}
+
+#order-form div:last-child {
+    margin-bottom: 0; /* Eliminar el margen inferior del último elemento div */
+}
+/* Estilos para los botones de sugerencia de preguntas */
+.sugerencias-preguntas {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los botones pasen a la siguiente línea si no hay suficiente espacio */
+    gap: 8px; /* Espacio entre los botones */
+    margin-top: 10px; /* Espacio desde el mensaje del bot */
+}
+
+.btn-sugerencia {
+    background-color: #e3f2fd; /* Un azul muy claro */
+    color: #1e88e5; /* Un azul más intenso */
+    border: 1px solid #bbdefb; /* Borde azul suave */
+    border-radius: 6px; /* Bordes redondeados */
+    padding: 8px 12px; /* Espaciado interior */
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); /* Sombra suave */
+    margin-bottom: 5px; /* Pequeño margen inferior entre filas si se envuelven */
+}
+
+.btn-sugerencia:hover {
+    background-color: #bbdefb; /* Azul más claro al hacer hover */
+    color: #1565c0; /* Azul más oscuro al hacer hover */
+    border-color: #90caf9; /* Borde azul un poco más intenso al hacer hover */
+}
+
+.btn-sugerencia:active {
+    background-color: #90caf9; /* Azul aún más claro al hacer clic */
+    color: #0d47a1; /* Azul aún más oscuro al hacer clic */
+    border-color: #64b5f6; /* Borde más intenso al hacer clic */
+    box-shadow: 0 0 0 0.2rem rgba(25, 118, 210, 0.25); /* Ligera sombra al hacer clic */
+}
+/* Estilos para el botón de pedir ubicación por WhatsApp */
+.btn-whatsapp-ubicacion-boton {
+    background-color: #25D366; /* Color verde de WhatsApp */
+    color: #fff; /* Texto blanco */
+    border: none;
+    border-radius: 8px; /* Bordes más redondeados */
+    padding: 10px 15px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15); /* Sombra suave */
+    margin-top: 10px; /* Espacio desde el último mensaje o elemento */
+    width: fit-content; /* Ajusta el ancho al contenido */
+    align-self: center; /* Centra el botón horizontalmente si está dentro de un flex container */
+    display: block; /* Asegura que ocupe una línea completa si no está en un flex container */
+    margin-left: auto;
+    margin-right: auto; /* Otra forma de centrar si es un bloque */
+}
+
+.btn-whatsapp-ubicacion-boton:hover {
+    background-color: #128C7E; /* Verde más oscuro al hacer hover */
+}
+
+.btn-whatsapp-ubicacion-boton:active {
+    background-color: #0A5F54; /* Verde aún más oscuro al hacer clic */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al hacer clic */
+}

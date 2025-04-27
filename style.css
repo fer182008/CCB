@@ -1,0 +1,412 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #e096bb;
+  background: linear-gradient(135deg, #dfa1d4, #ffb9f3,#e4c7ff);
+  font-family: 'Poppins', sans-serif;
+  color: #2c2c2c;
+  overflow-x: hidden;
+}
+
+/* Definiciones de Animaciones */
+@keyframes bounceProfessional {
+  0% {
+    transform: translateY(0);
+    animation-timing-function: ease-out; /* Comienza rápido y desacelera */
+  }
+  50% {
+    transform: translateY(-30px); /* Un poco más de altura */
+    animation-timing-function: ease-in-out; /* Acelera y desacelera */
+  }
+  100% {
+    transform: translateY(0);
+    animation-timing-function: ease-in; /* Comienza lento y acelera */
+  }
+}
+
+/* Tipografías */
+h1, h2, h3 {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: 700;
+  color: #6a1b9a; /* violeta pastel */
+}
+
+p, a, button, input, textarea {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+}
+
+/* Encabezado */
+.header {
+  background: #1a1a1a; /* negro pastel */
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  height: 100px;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav a {
+  color: #f3e5ab; /* dorado pastel */
+  text-decoration: none;
+  font-size: 18px;
+  position: relative;
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: #f3e5ab;
+  left: 0;
+  bottom: -5px;
+  transition: 0.4s;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+/* Hero */
+.hero {
+  height: 90vh;
+  background: url('../img/hero-bg.png') no-repeat center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+
+.overlay {
+  background: rgba(255, 255, 255, 0.7);
+  padding: 60px 30px;
+  border-radius: 20px;
+}
+
+.titulo {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+
+/* Botón principal */
+.btn-primario {
+  background: linear-gradient(90deg, #ff80ab, #ce93d8);
+  color: white;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 50px;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 8px 16px rgba(106, 27, 154, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-primario:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(106, 27, 154, 0.4);
+}
+
+/* Secciones */
+.seccion {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.subtitulo {
+  font-size: 2.5rem;
+  margin-bottom: 60px;
+  color: #6a1b9a;
+}
+
+/* Servicios */
+.grid-servicios {
+  background-color: #f7b3d6;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+}
+
+.servicio {
+  background: #ffc4ff;
+  padding: 50px;
+  border-radius: 20px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+
+.servicio img {
+  width: 200px;
+  margin-bottom: 5px;
+}
+
+.servicio:hover {
+  transform: translateY(-10px);
+}
+
+/* Botones de contacto */
+.botones-contacto {
+  margin: 40px 0;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-whatsapp, .btn-email {
+  background: #25D366;
+  color: white;
+  padding: 14px 24px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  box-shadow: 0 8px 16px rgba(37, 211, 102, 0.4);
+  transition: background 0.3s, transform 0.3s;
+}
+
+.btn-email {
+  background: #d63384;
+}
+
+.btn-whatsapp:hover, .btn-email:hover {
+  transform: scale(1.1);
+}
+
+/* Formulario */
+.formulario {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.formulario input, .formulario textarea {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+/* Footer */
+.footer {
+  background: #1a1a1a;
+  color: #f3e5ab;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+/* Bot Asistente */
+#bot-asistente {
+  position:fixed;
+  bottom: 40px;
+  right: 30px;
+  z-index: 999;
+  animation: bounceProfessional 2s infinite alternate; /* Aplicamos la animación profesional */
+  cursor: pointer;
+}
+
+.bot-gif {
+  width: 100px;
+}
+
+/* Galería */
+.galeria {
+  background-color: #ffd0e7;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  cursor: pointer;
+  border-radius: 15px;
+}
+
+.galeria img {
+  width: 100%;
+  border-radius: 20px;
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+
+.galeria img:hover {
+  transform: scale(1.05);
+}
+/* Encuesta */
+
+/* Botón de Encuesta Estilo Juego */
+.boton-juego {
+  background: linear-gradient(145deg, #ff7e5f, #feb47b);
+  border: none;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 15px 30px;
+  border-radius: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.boton-juego:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 20px rgba(0,0,0,0.4);
+  background: linear-gradient(145deg, #feb47b, #ff7e5f);
+  cursor: pointer;
+}
+
+.icono-boton {
+  width: 32px;
+  height: 32px;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  padding-top: 80px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  background-color: rgba(0,0,0,0.6);
+}
+
+.modal-contenido {
+  background-color: #fff;
+  margin: auto;
+  padding: 30px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0px 10px 25px rgba(0,0,0,0.5);
+  animation: animarModal 0.4s;
+  position: relative;
+}
+
+@keyframes animarModal {
+  from { transform: translateY(-50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Botón cerrar */
+.cerrar {
+  color: #aaa;
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.cerrar:hover {
+  color: #000;
+}
+
+/* Estilo preguntas */
+.pregunta {
+  margin-bottom: 20px;
+}
+
+textarea, select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-top: 5px;
+  font-size: 16px;
+  resize: vertical;
+}
+
+.opciones-radio {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.opciones-radio .opcion-radio {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.btn-aplicar {
+  background-color: #ff7e5f;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 30px;
+  font-size: 18px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 20px;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+.btn-aplicar:hover {
+  background-color: #feb47b;
+  cursor: pointer;
+}
+
+.mensaje {
+  text-align: center;
+  margin-top: 15px;
+  color: green;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.oculto {
+  display: none;
+}
+
+/* Responsive pequeño */
+@media (max-width: 600px) {
+  .modal-contenido {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .boton-juego {
+    font-size: 18px;
+    padding: 12px 20px;
+    cursor: pointer;
+  }
+}
+#talla {
+font-size: large;
+border-radius: 5px;
+}
