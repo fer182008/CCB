@@ -87,52 +87,73 @@ p, a, button, input, textarea {
 @media (max-width: 768px) {
     .header {
         padding: 15px 20px;
-        flex-direction: column; /* Apilar elementos verticalmente */
-        align-items: center; /* Centrar elementos */
+        flex-direction: row; /* Cambiamos a fila para alinear logo e navegación */
+        justify-content: space-between; /* Espacio entre logo e navegación */
+        align-items: center; /* Centrar verticalmente */
     }
 
     .logo img {
         height: 60px; /* Achicar el logo */
-        margin-bottom: 10px; /* Espacio inferior si la navegación se apila debajo */
+        margin-bottom: 0; /* Removemos el margen inferior */
     }
 
     .nav ul {
-        flex-direction: column; /* Apilar los enlaces */
-        align-items: center;
+        flex-direction: row; /* Mantenemos la fila para los enlaces */
+        align-items: center; /* Centrar verticalmente los enlaces */
         gap: 10px;
-        margin-top: 10px;
+        margin-top: 0; /* Removemos el margen superior */
     }
 
     .nav a {
         font-size: 14px; /* Achicar la fuente de los enlaces */
     }
 }
-
 /* Hero */
 .hero {
-  height: 90vh;
-  background: url('../img/hero-bg.png') no-repeat center/cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  position: relative;
+    height: 90vh;
+    background: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url('../img/hero-bg.png') no-repeat center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
 }
 
 .overlay {
-  background: rgba(255, 255, 255, 0.7);
-  padding: 60px 30px;
-  border-radius: 20px;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 60px 30px;
+    border-radius: 20px;
 }
 
 .titulo {
-  font-size: 3.5rem;
-  margin-bottom: 20px;
+    font-size: 3.5rem;
+    margin-bottom: 20px;
 }
 
 .hero p {
-  font-size: 1.5rem;
-  margin-bottom: 30px;
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        height: auto;
+        padding: 80px 20px;
+    }
+
+    .overlay {
+        padding: 40px 20px;
+    }
+
+    .titulo {
+        font-size: 2.2rem; /* Reducido el tamaño del título para móviles */
+        margin-bottom: 15px;
+    }
+
+    .hero p {
+        font-size: 1.1rem; /* Reducido el tamaño del texto para móviles */
+        margin-bottom: 20px;
+    }
 }
 
 /* Botón principal */
